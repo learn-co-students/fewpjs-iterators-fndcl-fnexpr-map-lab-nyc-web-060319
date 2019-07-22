@@ -1,3 +1,5 @@
+// import { WSAECONNREFUSED } from "constants";
+
 const tutorials = [
   'what does the this keyword mean?',
   'What is the Contutorialuctor OO pattern?',
@@ -11,6 +13,18 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
+function titleCased() {
+  // console.log(tutorials)
+   return tutorials.map(function(tutorial){
+    // console.log(tutorial)
+    let words = tutorial.split(' ');
+    let newWords = words.map(function(word){
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    // console.log(newWords)
+    return newWords.join(' ')
+    // console.log(words.join(" "))
+  });
 }
+
+titleCased();
